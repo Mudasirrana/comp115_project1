@@ -1,0 +1,51 @@
+import turtle
+
+# Function to draw a square
+def draw_square(t, size):
+    for _ in range(4):
+        t.forward(size)
+        t.right(90)
+
+# Function to draw a circle
+def draw_circle(t, radius):
+    t.circle(radius)
+
+# Function to draw a star
+def draw_star(t, size):
+    for _ in range(5):
+        t.forward(size)
+        t.right(144)
+
+# Function to draw the artistic picture
+def draw_artistic_picture():
+    # Set up the turtle
+    window = turtle.Screen()
+    window.bgcolor("white")
+    
+    artist = turtle.Turtle()
+    artist.speed(0)  # Set the fastest drawing speed
+    
+    # Draw the main artwork
+    artist.color("blue")
+    for _ in range(36):
+        draw_square(artist, 100)
+        artist.right(10)
+    
+    artist.color("red")
+    for _ in range(36):
+        draw_circle(artist, 50)
+        artist.right(10)
+    
+    artist.color("green")
+    for _ in range(36):
+        draw_star(artist, 80)
+        artist.right(10)
+    
+    # Hide the turtle
+    artist.hideturtle()
+    
+    # Keep the window open
+    window.mainloop()
+
+# Call the function to draw the artistic picture
+draw_artistic_picture()
